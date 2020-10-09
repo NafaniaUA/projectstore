@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+{% load static %}
+<header> 
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}" /> 
+    <h1 align = 'center'>Створити замовлення</h1>  
+    <p align = 'center'><a href="{% url 'index' %}"> << Повернутись </a></p>
+</header>
+
+
+<form action = "" method='POST'>
+    {% csrf_token %}
+
+    {{form.as_p}}
+   <div>
+       <p align = 'center'><button>Зберегти замовлення</button></p>
+   </div>
+</form>

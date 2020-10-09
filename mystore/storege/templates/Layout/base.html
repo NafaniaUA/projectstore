@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width = device-width, initial-scale = 1.0">
+        
+        <title>
+            Авторизація
+        </title>
+       
+    </head>
+    <body>
+        <header>
+            <h1 align = 'center'>Склад</h1>
+            <p>{% if user.is_authenticated %}
+                {{ user.email }}
+                <ul>
+                <li><a href="{% url 'logout' %}">Вийти</a></li>
+                <li><a href="{% url 'index' %}" > Перейти в базу</a></p></li>
+                </ul>
+                {% else %}
+                <a href="{% url 'login' %}"> Зареструватись</a>
+              
+                {% endif %}
+                </p>
+            <p>
+            
+         
+        </header>
+     
+    
+
+<div>
+        {% block content %}
+      
+       {% endblock %}
+</div>
+        <footer>
+
+        </footer>
+    </body>
+</html>

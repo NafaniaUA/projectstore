@@ -1,0 +1,23 @@
+{% extends 'Layout/base.html' %}
+
+<!DOCTYPE html>
+
+<meta charset="utf-8" />
+
+<html>
+
+  
+<header>
+    
+{% block content %}
+<h1>Сторінка авторизації</h1>
+</header>
+<form action = "" method = "POST">
+    {% csrf_token %}
+
+    {{form.as_p}}
+    <button>Підтвердити</button>
+</form>
+
+{% endblock %}
+</html>

@@ -1,0 +1,10 @@
+{% extends 'home.html' %}
+ 
+{% block content %}
+  {% for i in object_list %}
+    <div class="order-entry">
+      <h2><a href="{% url 'order_detail' i.pk %}">{{ i.id }}</a></h2>
+     
+    </div>
+  {% endfor %}
+{% endblock content %}

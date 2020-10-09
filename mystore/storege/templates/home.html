@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}" />
+    <title>Склад</title>
+
+  </head>
+  <body>
+    <header>
+      <h1 align = 'center'>Склад</h1>
+      <p>{% if user.is_authenticated %}
+      {{ user.email }}
+      <a href="{% url 'logout' %}">Вийти</a>
+      <a href="{% url 'form' %}">Додати замволення</a>
+      {% else %}
+      <a href="{% url 'login' %}">Зареструватись</a>
+      {% endif %}
+      </p>
+    </header>
+    <h1 align = 'center'>Оформлені замовлення</h1>
+{% block content %}
+{% endblock content %}
+
+{% for i in object_list %}
+<div class="order-entry">
+  <h2><a href="{% url 'order_detail' i.pk %}">Замовлення №{{ i.id }} </a></h2>
+ 
+</div>
+{% endfor %}
+  </body>
+</html>

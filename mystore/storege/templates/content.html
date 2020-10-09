@@ -1,0 +1,16 @@
+{% extends 'home.html' %}
+
+{% block content %}
+  <div class="order-entry">
+    <h2>Замовлення №{{object.id}}</h2>
+
+
+    <p><b>Склад: </b>{{object.orderr_connect_stor}}</p>
+    <p><b>Товар:</b> {{object.order_connect_mer}} </p>
+    <p><b>Дата замволення: </b>{{object.order_date  }}</p>
+    <p><b>Дата відправлення: </b>{{object.order_depart_date  }}</p>
+    <p><b>Товар підготовлений до відправки: </b>{{object.order_prepare}}</p>
+    <p><b>Товар відправлено: </b>{{object.order_depart}}</p>
+  </div>
+  <a href="{% url 'index' %}">Повернутись</a>
+{% endblock content %}
